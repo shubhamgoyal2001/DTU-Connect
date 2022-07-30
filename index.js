@@ -6,8 +6,10 @@ const {flash} = require("express-flash-message")
 var mongoose = require('mongoose'); 
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session);
- const uri = "mongodb://127.0.0.1/dtu_connect";
- // const uri = process.env.MONGODB; 
+//  const uri = "mongodb://127.0.0.1/dtu_connect";
+ // const uri = process.env.MONGODB;
+ const uri = "mongodb+srv://shubhamgoyal2001:Shubham2001@cluster0.5oue1cu.mongodb.net/?retryWrites=true&w=majority";
+ 
 const local = "mongodb://127.0.0.1/dtu_connect"; 
 const router = express.Router();
 const Post = require('./model/post'); 
@@ -112,7 +114,7 @@ app.listen(3000, () => {
   console.log("I am live");
 });
 
- mongoose.connect(local,()=>{
+ mongoose.connect(uri,()=>{
      
   console.log("connected to db2");
 })
