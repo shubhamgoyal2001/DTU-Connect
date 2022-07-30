@@ -110,8 +110,8 @@ app.get("/", async (req, res) => {
   res.render("home.ejs",{arr});// {isLoggedIn}
 });
  //process.env.PORT
-app.listen(3000, () => {
-  console.log("I am live");
+app.listen(process.env.PORT, () => {
+  console.log("Server Started");
 });
 
  mongoose.connect(uri,()=>{
